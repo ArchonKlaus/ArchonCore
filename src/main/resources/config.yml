@@ -1,0 +1,11 @@
+#ARCHON by Archon Klaus
+
+#HUD
+
+#Variabili disponibili: %x% %y% %z% %playercount% %servername% %ping% %money% %itemhand% %n% %maxplayers%
+
+#Format della HUD
+Format: '(%x%, %y%, %z%)'
+
+#ActionBar o Popup
+Type: Popup

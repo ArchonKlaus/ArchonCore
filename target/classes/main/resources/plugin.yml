@@ -1,0 +1,13 @@
+name: ArchonCore
+main: main.java.Archon.Main
+version: "1.2"
+api: ["1.0.0"]
+load: POSTWORLD
+author: Archon Klaus
+description: ArchonCore
+website: ArchonTeam.org
+
+commands:
+  fly:
+    description: ArchonCore Fly Command
+    permission: archon.fly
