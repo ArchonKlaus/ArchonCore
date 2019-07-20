@@ -26,14 +26,14 @@ public class Main extends PluginBase implements Listener{
     @Override
     public void onEnable(){
         this.getServer().getPluginManager().registerEvents(this, this);
-        getLogger().info("Archon abilitato");
+        getLogger().info("Archon enabled");
         this.saveDefaultConfig();
 
     }
 
     @Override
     public void onDisable(){
-        getLogger().info("Archon disabilitato");
+        getLogger().info("Archon disabled");
     }
 
     Server server = this.getServer();
@@ -72,9 +72,8 @@ public class Main extends PluginBase implements Listener{
         Player player = event.getPlayer();
         String uuid = player.getUniqueId().toString();
         String name = player.getName();
-        player.sendMessage(TextFormat.AQUA + "Il tuo UUID: ".concat(uuid)); //Il tuo UUID al join, non darlo a nessuno!
-        player.sendTip(TextFormat.RED + "Ciao ".concat(name) + TextFormat.YELLOW + ", Buon Divertimento!");
-        player.sendMessage(TextFormat.RED + "Bentornato ".concat(name) + TextFormat.YELLOW + ", Divertiti!");
+        player.sendMessage(TextFormat.AQUA + "Your XUID: ".concat(uuid)); //Il tuo UUID al join, non darlo a nessuno!
+        player.sendMessage(TextFormat.RED + "Welcome back ".concat(name) + TextFormat.YELLOW + "!");
     }
 
     @EventHandler
@@ -86,7 +85,7 @@ public class Main extends PluginBase implements Listener{
     public void onChat(PlayerChatEvent event){
         Player player = event.getPlayer();
         String name = player.getName();
-        event.setFormat(TextFormat.GRAY + "Giocatore : §f".concat(name) + " : §e" + event.getMessage());
+        event.setFormat(TextFormat.GRAY + "Player : §f".concat(name) + " : §e" + event.getMessage());
     }
 
 
@@ -100,7 +99,7 @@ public class Main extends PluginBase implements Listener{
         {
             if (player == null)
             {
-                sender.sendMessage("Devi essere un giocatore");
+                sender.sendMessage("You need to be a player!");
                 return true;
             }
             if (player != null)
@@ -108,18 +107,18 @@ public class Main extends PluginBase implements Listener{
                 if (player.hasPermission("archon.fly")) {
                     if (!player.getAllowFlight())
                     {
-                        player.sendMessage(TextFormat.GREEN + "Archon : " + "Fly Abilitata");
+                        player.sendMessage(TextFormat.GREEN + "Archon : " + "Fly Enabled");
                         player.setAllowFlight(true);
                     }
                     else
                     {
-                        sender.sendMessage(TextFormat.GREEN + "Archon : " + "Fly Disabilitata");
+                        sender.sendMessage(TextFormat.RED + "Archon : " + "Fly Disabled");
                         player.setAllowFlight(false);
                     }
                 }
             }
             else {
-                sender.sendMessage(TextFormat.GREEN + "Archon : " + "Non hai il permesso.");
+                sender.sendMessage(TextFormat.RED + "Archon : " + "No permission!");
             }
         }
         return true;
