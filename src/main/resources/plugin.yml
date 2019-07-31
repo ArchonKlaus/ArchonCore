@@ -1,6 +1,6 @@
 name: ArchonCore
 main: main.java.Archon.Main
-version: "1.4.1"
+version: "alpha-1.4.1"
 api: ["1.2"]
 load: POSTWORLD
 author: ArchonKlaus
